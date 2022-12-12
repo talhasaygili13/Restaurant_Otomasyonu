@@ -710,7 +710,7 @@
             this.Controls.Add(this.lblMasaNo);
             this.Name = "SiparisFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SiparisFrm";
+            this.Text = "Sipariş Sayfası";
             this.Load += new System.EventHandler(this.SiparisFrm_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

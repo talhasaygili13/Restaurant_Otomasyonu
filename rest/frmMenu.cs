@@ -131,6 +131,9 @@ namespace rest
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
+            rezervasyonKontrol reservationControl = new rezervasyonKontrol();
+            reservationControl.rezervasyonSilGeçmiş();
+            
         }
     }
 }

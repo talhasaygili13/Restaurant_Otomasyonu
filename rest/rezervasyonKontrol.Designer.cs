@@ -207,7 +207,7 @@
             this.Controls.Add(this.lvRezervasyonKontrol);
             this.Name = "rezervasyonKontrol";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "rezervasyonKontrol";
+            this.Text = "Rezervasyon Kontrol";
             this.Load += new System.EventHandler(this.rezervasyonKontrol_Load);
             this.gpRezervasyon.ResumeLayout(false);
             this.gpRezervasyon.PerformLayout();

@@ -51,10 +51,10 @@ namespace rest
                 yenile();
             }
 
-            rezervasyonSilGeçmiş();
+          //  rezervasyonSilGeçmiş();
         }
 
-        private void rezervasyonSilGeçmiş()
+        public void rezervasyonSilGeçmiş()
         {
             cMasalar table = new cMasalar();
             cAdisyon addition = new cAdisyon();

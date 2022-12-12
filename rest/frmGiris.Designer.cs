@@ -47,7 +47,7 @@
             this.cbKullanici.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cbKullanici.FormattingEnabled = true;
             this.cbKullanici.ItemHeight = 24;
-            this.cbKullanici.Location = new System.Drawing.Point(676, 387);
+            this.cbKullanici.Location = new System.Drawing.Point(676, 382);
             this.cbKullanici.Name = "cbKullanici";
             this.cbKullanici.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cbKullanici.Size = new System.Drawing.Size(252, 32);
@@ -140,7 +140,7 @@
             this.checkBox1.Appearance = System.Windows.Forms.Appearance.Button;
             this.checkBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.checkBox1.BackgroundImage = global::rest.Properties.Resources.eye;
-            this.checkBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.checkBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
