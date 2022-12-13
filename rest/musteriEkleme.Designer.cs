@@ -174,6 +174,7 @@
             this.btnKapat.TabIndex = 20;
             this.btnKapat.UseVisualStyleBackColor = true;
             this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
+            this.btnKapat.MouseHover += new System.EventHandler(this.btnKapat_MouseHover);
             // 
             // btnGeriDon
             // 
@@ -185,6 +186,7 @@
             this.btnGeriDon.TabIndex = 21;
             this.btnGeriDon.UseVisualStyleBackColor = true;
             this.btnGeriDon.Click += new System.EventHandler(this.btnGeriDon_Click);
+            this.btnGeriDon.MouseHover += new System.EventHandler(this.btnGeriDon_MouseHover);
             // 
             // txtMusteriNo
             // 

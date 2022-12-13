@@ -9,20 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace rest
 {
     public partial class SiparisFrm : Form
     {
-        // private readonly frmMasa table;
-        //private readonly cMasalar tables;
-        // private readonly cRezervasyon reservation;
-        // private readonly cAdisyon addition;
-        //  private readonly cUrunCesitleri productTypes;
-        //   private readonly cSiparis orders;
-        //private readonly billfrm bill;
-
+  
         public SiparisFrm()
         {
             InitializeComponent();
@@ -36,10 +28,6 @@ namespace rest
             cUrunCesitleri productTypes = new cUrunCesitleri();
 
             productTypes.getByProductTypes(lvMenu, btnAraSıcak8);
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
         }
 
         private void btnGeriDon_Click(object sender, EventArgs e)
@@ -107,11 +95,11 @@ namespace rest
 
         private void SiparisFrm_Load(object sender, EventArgs e)
         {
+
             cAdisyon addition = new cAdisyon();
             cSiparis orders = new cSiparis();
             cMasalar tables = new cMasalar();
             cRezervasyon reservation = new cRezervasyon();
-
             lblMasaNo.Text = cGenel._ButtonValue;
             tableId = tables.TableGetbyNumber(cGenel._ButtonName);
             reservation.rezervasyonGetir(lvAdisyon, tableId);
@@ -275,13 +263,8 @@ namespace rest
                 }
             }
             else if (tables.TableGetbyState(tableId, 3) == true)
-
             {
-                //newAddition.ServisTurNo = 1;
-                //newAddition.PersonelId = 1;
-                //newAddition.MasaId = tableId;
-                //newAddition.Tarih = DateTime.Now;
-                //sonuc = newAddition.setByAdditionNew(newAddition);
+
 
                 tables.setChangeTableState(cGenel._ButtonName, 4);
                 if (lvSiparisler.Items.Count > 0)
@@ -420,5 +403,6 @@ namespace rest
         {
             toolTip1.Show("Sipariş oluşturmak için tıklayınız", btnSiparis);
         }
+
     }
 }

@@ -15,11 +15,7 @@ namespace rest
 {
     public partial class frmMusteriAra : Form
     {
-        // private readonly frmMenu menu;
-        //private readonly musteriEkleme addClients;
-        // private readonly cMusteriler clients;
-        //private readonly cPaketler packets;
-        //private readonly frmSiparisKontrol orderControl;
+    private readonly frmSiparisKontrol orderControl;
 
         public frmMusteriAra()
         {
@@ -67,6 +63,10 @@ namespace rest
 
                 addClients.eklemeEkrani = false;
                 addClients.Show();
+            }
+            else
+            {
+                MessageBox.Show("Lütfen bir müşteri seçiniz");
             }
         }
 
@@ -129,6 +129,7 @@ namespace rest
         {
             frmSiparisKontrol orderControl = new frmSiparisKontrol();
 
+            orderControl.paketSiparis = true;
             this.Close();
             orderControl.Show();
         }

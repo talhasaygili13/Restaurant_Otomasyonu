@@ -415,7 +415,7 @@
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(10, 444);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(287, 197);
+            this.listView1.Size = new System.Drawing.Size(186, 197);
             this.listView1.TabIndex = 27;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -431,7 +431,7 @@
             // columnHeader17
             // 
             this.columnHeader17.Text = "Servis Türü";
-            this.columnHeader17.Width = 100;
+            this.columnHeader17.Width = 0;
             // 
             // columnHeader18
             // 

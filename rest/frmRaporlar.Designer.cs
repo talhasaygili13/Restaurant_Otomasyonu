@@ -239,6 +239,7 @@
             this.dtBaslangic.Name = "dtBaslangic";
             this.dtBaslangic.Size = new System.Drawing.Size(200, 22);
             this.dtBaslangic.TabIndex = 29;
+            this.dtBaslangic.Value = new System.DateTime(2022, 12, 13, 13, 11, 1, 0);
             // 
             // dtBitis
             // 
@@ -308,6 +309,7 @@
             this.Name = "frmRaporlar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RAPORLAR";
+            this.Load += new System.EventHandler(this.frmRaporlar_Load);
             this.grpMenuBaslik.ResumeLayout(false);
             this.grpIstatistik.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chRapor)).EndInit();

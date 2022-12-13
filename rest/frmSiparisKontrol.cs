@@ -12,11 +12,7 @@ namespace rest
 {
     public partial class frmSiparisKontrol : Form
     {
-        // private readonly cAdisyon addition;
-        // private readonly billfrm bill;
-        // private readonly cSiparis order;
-//        private readonly frmMenu menu;
-
+ 
         public frmSiparisKontrol()
         {
             InitializeComponent();
@@ -25,6 +21,18 @@ namespace rest
 
         private void frmSiparisKontrol_Load(object sender, EventArgs e)
         {
+            if (paketSiparis == true)
+            {
+                btnGeriDon.Visible = true;
+                btnRezervasyonDon.Visible = false;
+
+            }
+            else
+            {
+                btnGeriDon.Visible = false;
+                btnRezervasyonDon.Visible = true;
+            }
+        
             cAdisyon addition = new cAdisyon();
 
             int butonSayisi = addition.paketAdisyonBulAdedi();
@@ -120,16 +128,24 @@ namespace rest
                 order.adisyonPaketSiparisDetaylari(lvSatisDetaylari,
                     Convert.ToInt32(lvMusteriDetaylari.SelectedItems[0].SubItems[4].Text));
                 toplam();
-                //lblGenelToplam.Text = c.GenelToplamBul(Convert.ToInt32(lvMusteriDetaylari.SelectedItems[0].SubItems[0].Text)).ToString() + " TL";
             }
         }
 
         private void btnGeriDon_Click(object sender, EventArgs e)
         {
-            frmMenu menu = new frmMenu();
-
+            frmMusteriAra searchClient = new frmMusteriAra();
             this.Close();
-            menu.Show();
+            searchClient.Show();
         }
+
+        private void btnRezervasyonDon_Click(object sender, EventArgs e)
+        {
+            frmRezervasyon reservation = new frmRezervasyon();
+      
+            this.Close();
+            reservation.Show();
+        }
+        public bool paketSiparis = false;
+
     }
 }

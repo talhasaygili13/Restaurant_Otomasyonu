@@ -12,10 +12,7 @@ namespace rest
 {
     public partial class frmAyarlar : Form
     {
-        // private readonly cPersoneller worker;
-        //   private readonly cPersonelGorev workerMission;
-        // private readonly frmMenu menu;
-
+      
         public frmAyarlar()
         {
             InitializeComponent();

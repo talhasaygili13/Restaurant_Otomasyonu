@@ -13,9 +13,6 @@ namespace rest
 {
     public partial class frmMasa : Form
     {
-        //  private readonly cMasalar table;
-        // private readonly frmMenu menu;
-        //private readonly SiparisFrm bill;
 
         public frmMasa()
         {
@@ -66,7 +63,7 @@ namespace rest
                             item.Text = String.Format("{0}{1}{2}",
                                             fark.Days > 0 ? string.Format("{0} Gün", fark.Days) : "",
                                             fark.Hours > 0 ? string.Format("{0} Saat", fark.Hours) : "",
-                                            fark.Minutes > 0 ? string.Format("{0} Dakika", fark.Minutes) : "").Trim() +
+                                            fark.Minutes > 0 ? string.Format("{0} Dakika", fark.Minutes) : "")+
                                         "Masa" +
                                         dr["ID"].ToString();
 
@@ -100,7 +97,7 @@ namespace rest
             SiparisFrm bill = new SiparisFrm();
 
             int uzunluk = btnMasa1.Text.Length;
-            cGenel._ButtonValue = btnMasa1.Text.Substring(uzunluk - 6, 6);
+            cGenel._ButtonValue = btnMasa1.Text.Substring(uzunluk - 5, 5);
             cGenel._ButtonName = btnMasa1.Name;
             this.Close();
             bill.Show();
@@ -111,7 +108,7 @@ namespace rest
             SiparisFrm bill = new SiparisFrm();
 
             int uzunluk = btnMasa2.Text.Length;
-            cGenel._ButtonValue = btnMasa2.Text.Substring(uzunluk - 6, 6);
+            cGenel._ButtonValue = btnMasa2.Text.Substring(uzunluk - 5, 5);
             cGenel._ButtonName = btnMasa2.Name;
             this.Close();
             bill.Show();
@@ -122,7 +119,7 @@ namespace rest
             SiparisFrm bill = new SiparisFrm();
 
             int uzunluk = btnMasa3.Text.Length;
-            cGenel._ButtonValue = btnMasa3.Text.Substring(uzunluk - 6, 6);
+            cGenel._ButtonValue = btnMasa3.Text.Substring(uzunluk - 5, 5);
             cGenel._ButtonName = btnMasa3.Name;
             this.Close();
             bill.Show();
@@ -133,7 +130,7 @@ namespace rest
             SiparisFrm bill = new SiparisFrm();
 
             int uzunluk = btnMasa4.Text.Length;
-            cGenel._ButtonValue = btnMasa4.Text.Substring(uzunluk - 6, 6);
+            cGenel._ButtonValue = btnMasa4.Text.Substring(uzunluk - 5, 5);
             cGenel._ButtonName = btnMasa4.Name;
             this.Close();
             bill.Show();
@@ -144,7 +141,7 @@ namespace rest
             SiparisFrm bill = new SiparisFrm();
 
             int uzunluk = btnMasa5.Text.Length;
-            cGenel._ButtonValue = btnMasa5.Text.Substring(uzunluk - 6, 6);
+            cGenel._ButtonValue = btnMasa5.Text.Substring(uzunluk - 5, 5);
             cGenel._ButtonName = btnMasa5.Name;
             this.Close();
             bill.Show();
@@ -155,7 +152,7 @@ namespace rest
             SiparisFrm bill = new SiparisFrm();
 
             int uzunluk = btnMasa6.Text.Length;
-            cGenel._ButtonValue = btnMasa6.Text.Substring(uzunluk - 6, 6);
+            cGenel._ButtonValue = btnMasa6.Text.Substring(uzunluk - 5, 5);
             cGenel._ButtonName = btnMasa6.Name;
             this.Close();
             bill.Show();
@@ -166,7 +163,7 @@ namespace rest
             SiparisFrm bill = new SiparisFrm();
 
             int uzunluk = btnMasa7.Text.Length;
-            cGenel._ButtonValue = btnMasa7.Text.Substring(uzunluk - 6, 6);
+            cGenel._ButtonValue = btnMasa7.Text.Substring(uzunluk - 5, 5);
             cGenel._ButtonName = btnMasa7.Name;
             this.Close();
             bill.Show();
@@ -177,7 +174,7 @@ namespace rest
             SiparisFrm bill = new SiparisFrm();
 
             int uzunluk = btnMasa8.Text.Length;
-            cGenel._ButtonValue = btnMasa8.Text.Substring(uzunluk - 6, 6);
+            cGenel._ButtonValue = btnMasa8.Text.Substring(uzunluk - 5, 5);
             cGenel._ButtonName = btnMasa8.Name;
             this.Close();
             bill.Show();
@@ -188,7 +185,7 @@ namespace rest
             SiparisFrm bill = new SiparisFrm();
 
             int uzunluk = btnMasa9.Text.Length;
-            cGenel._ButtonValue = btnMasa9.Text.Substring(uzunluk - 6, 6);
+            cGenel._ButtonValue = btnMasa9.Text.Substring(uzunluk - 5, 5);
             cGenel._ButtonName = btnMasa9.Name;
             this.Close();
             bill.Show();
@@ -199,15 +196,10 @@ namespace rest
             SiparisFrm bill = new SiparisFrm();
 
             int uzunluk = btnMasa10.Text.Length;
-            cGenel._ButtonValue = btnMasa10.Text.Substring(uzunluk - 7, 7);
+            cGenel._ButtonValue = btnMasa10.Text.Substring(uzunluk - 6, 6);
             cGenel._ButtonName = btnMasa10.Name;
             this.Close();
             bill.Show();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

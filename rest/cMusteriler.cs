@@ -69,7 +69,7 @@ namespace rest
         #endregion
 
 
-        public bool MusteriKontrol(string tlf)
+        public bool MusteriKontrol(string tlf,string ad,string soyad)
         {
             bool sonuc = false;
 
@@ -79,26 +79,29 @@ namespace rest
             cmd.CommandText = "MusteriKontrol";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("@telefon", SqlDbType.VarChar).Value = tlf;
+            cmd.Parameters.Add("@ad", SqlDbType.VarChar).Value = ad;
+            cmd.Parameters.Add("@soyad", SqlDbType.VarChar).Value = soyad;
+           
             cmd.Parameters.Add("@sonuc", SqlDbType.Int);
             cmd.Parameters["@sonuc"].Direction = ParameterDirection.Output;
 
+
             if (con.State == ConnectionState.Closed)
-            {
+
                 con.Open();
-                try
-                {
-                    cmd.ExecuteNonQuery();
-                    sonuc = Convert.ToBoolean(cmd.Parameters["@sonuc"].Value);
-                }
-                catch (SqlException ex)
-                {
-                    string hata = ex.Message;
-                }
-                finally
-                {
-                    //con.Dispose();
-                    con.Close();
-                }
+            try
+            {
+                cmd.ExecuteNonQuery();
+                sonuc = Convert.ToBoolean(cmd.Parameters["@sonuc"].Value);
+            }
+            catch (SqlException ex)
+            {
+                string hata = ex.Message;
+            }
+            finally
+            {
+                //con.Dispose();
+                con.Close();
             }
 
             return sonuc;
@@ -107,15 +110,7 @@ namespace rest
 
         public int MusteriEkle(cMusteriler m)
         {
-            //musteriEkleme frm = new musteriEkleme();
-            //foreach (Control item in frm.Controls)
-            //{
-            //    if (item is TextBox)
-            //    {
-            //        TextBox tbox = (TextBox)item;
-            //        tbox.Clear();
-            //    }
-            //}
+  
             int sonuc = 0;
             SqlConnection con = new SqlConnection(gnl.conString);
             SqlCommand cmd =

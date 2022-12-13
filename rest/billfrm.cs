@@ -12,14 +12,7 @@ namespace rest
 {
     public partial class billfrm : Form
     {
-       // private readonly cSiparis order;
-        //private readonly cPaketler packets;
-        //private readonly SiparisFrm bill;
-      //  private readonly cMasalar masalar;
-       // private readonly cRezervasyon reservation;
-        //private readonly cOdeme pay;
-       // private readonly cAdisyon addittion;
-       // private readonly frmMenu menu;
+      
         public billfrm()
         {
             InitializeComponent();
@@ -47,12 +40,11 @@ namespace rest
                         toplam += Convert.ToDecimal(lvUrunler.Items[i].SubItems[3].Text);
                     }
 
-                    lblToplamTutar.Text = String.Format("{0:0.000}", toplam);
-                    lblOdenecek.Text = String.Format("{0:0.000}", toplam);
+                    lblToplamTutar.Text = String.Format("{0:0.}", toplam);
+                    lblOdenecek.Text = String.Format("{0:0.}", toplam);
                     decimal kdv = Convert.ToDecimal(lblOdenecek.Text) * 18 / 100;
-                    lblKdv.Text = string.Format("{0:0.000}", kdv);
+                    lblKdv.Text = string.Format("{0:0.}", kdv);
                 }
-
                 gbIndirim.Visible = true;
                 txtIndirimTutari.Clear();
             }
@@ -85,10 +77,10 @@ namespace rest
                         toplam += Convert.ToDecimal(lvUrunler.Items[i].SubItems[3].Text);
                     }
 
-                    lblToplamTutar.Text = String.Format("{0:0.000}", toplam);
-                    lblOdenecek.Text = String.Format("{0:0.000}", toplam);
+                    lblToplamTutar.Text = String.Format("{0:0.}", toplam);
+                    lblOdenecek.Text = String.Format("{0:0.}", toplam);
                     decimal kdv = Convert.ToDecimal(lblOdenecek.Text) * 18 / 100;
-                    lblKdv.Text = string.Format("{0:0.000}", kdv);
+                    lblKdv.Text = string.Format("{0:0.}", kdv);
                 }
 
                 gbIndirim.Visible = true;
@@ -112,11 +104,11 @@ namespace rest
                 {
                     try
                     {
-                        lblIndirim.Text = string.Format("{0:0.000}", Convert.ToDecimal(txtIndirimTutari.Text));
+                        lblIndirim.Text = string.Format("{0:0.}", Convert.ToDecimal(txtIndirimTutari.Text));
                     }
                     catch (Exception)
                     {
-                        lblIndirim.Text = string.Format("{0:0.000}", 0);
+                        lblIndirim.Text = string.Format("{0:0.}", 0);
                     }
                 }
                 else
@@ -126,7 +118,7 @@ namespace rest
             }
             catch (Exception)
             {
-                lblIndirim.Text = string.Format("{0:0.000}", 0);
+                lblIndirim.Text = string.Format("{0:0.}", 0);
             }
         }
 
@@ -155,11 +147,11 @@ namespace rest
                 decimal odenecek = 0;
                 lblOdenecek.Text = lblToplamTutar.Text;
                 odenecek = Convert.ToDecimal(lblOdenecek.Text) - Convert.ToDecimal(lblIndirim.Text);
-                lblOdenecek.Text = string.Format("{0:0.000}", odenecek);
+                lblOdenecek.Text = string.Format("{0:0.}", odenecek);
             }
 
             decimal kdv = Convert.ToDecimal(lblOdenecek.Text) * 18 / 100;
-            lblKdv.Text = string.Format("{0:0.000}", kdv);
+            lblKdv.Text = string.Format("{0:0.}", kdv);
         }
 
 
@@ -248,7 +240,6 @@ namespace rest
             }
             else if (cGenel._ServisTurNo == 2)
             {
-                // ADISYONID,ODEMETURID,MUSTERIID,ARATOPLAM,KDVTUTARI,TOPLAMTUTAR,INDIRIM
                 pay.AdisyonID = Convert.ToInt32(lblAdisyonId.Text);
                 pay.OdemeTurId = odemeTuru;
 

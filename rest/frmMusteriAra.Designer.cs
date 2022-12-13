@@ -176,7 +176,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Müşteri No";
-            this.columnHeader1.Width = 100;
+            this.columnHeader1.Width = 130;
             // 
             // columnHeader2
             // 
@@ -196,7 +196,7 @@
             // columnHeader5
             // 
             this.columnHeader5.Text = "Adres";
-            this.columnHeader5.Width = 120;
+            this.columnHeader5.Width = 150;
             // 
             // columnHeader6
             // 

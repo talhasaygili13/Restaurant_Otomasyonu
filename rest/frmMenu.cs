@@ -12,21 +12,12 @@ namespace rest
 {
     public partial class frmMenu : Form
     {
-      //  private readonly rezervasyonKontrol reservationControl;
-       // private readonly frmAyarlar settings;
-        //private readonly frmMasa table;
-      //  private readonly frmRezervasyon reservation;
-      //  private readonly frmGiris login;
-      //  private readonly frmMusteriAra clients;
-       // private readonly frmMutfak kitchen;
-       // private readonly frmRaporlar reports;
 
         public frmMenu()
         {
             InitializeComponent();
         }
 
-       // rezervasyonKontrol reservationControl = new rezervasyonKontrol();
 
 
         private void btnAyarlar_Click(object sender, EventArgs e)

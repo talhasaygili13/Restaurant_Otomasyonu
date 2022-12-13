@@ -442,7 +442,7 @@
             this.lvPersoneller.HideSelection = false;
             this.lvPersoneller.Location = new System.Drawing.Point(3, 16);
             this.lvPersoneller.Name = "lvPersoneller";
-            this.lvPersoneller.Size = new System.Drawing.Size(327, 159);
+            this.lvPersoneller.Size = new System.Drawing.Size(360, 159);
             this.lvPersoneller.TabIndex = 3;
             this.lvPersoneller.UseCompatibleStateImageBehavior = false;
             this.lvPersoneller.View = System.Windows.Forms.View.Details;
@@ -450,8 +450,8 @@
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "PersonelID";
-            this.columnHeader4.Width = 0;
+            this.columnHeader4.Text = "Personel No";
+            this.columnHeader4.Width = 100;
             // 
             // columnHeader5
             // 
@@ -461,7 +461,7 @@
             // columnHeader6
             // 
             this.columnHeader6.Text = "Görevi";
-            this.columnHeader6.Width = 103;
+            this.columnHeader6.Width = 80;
             // 
             // columnHeader7
             // 
@@ -471,6 +471,7 @@
             // columnHeader8
             // 
             this.columnHeader8.Text = "Soyadı";
+            this.columnHeader8.Width = 80;
             // 
             // btnGeriDon
             // 
@@ -489,7 +490,7 @@
             this.groupBox4.Controls.Add(this.lvPersoneller);
             this.groupBox4.Location = new System.Drawing.Point(324, 486);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(333, 178);
+            this.groupBox4.Size = new System.Drawing.Size(366, 178);
             this.groupBox4.TabIndex = 19;
             this.groupBox4.TabStop = false;
             // 

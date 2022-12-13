@@ -196,15 +196,7 @@ namespace rest
             while (dr.Read())
             {
                 cMasalar c = new cMasalar();
-                //  if (c._DURUM == 2)
-                // {
-                durum = "DOLU";
-
-
-                //   }
-                // else if (c._DURUM == 3)
-                //  {
-
+          
                 durum = "Rezerve";
 
 
@@ -257,7 +249,6 @@ namespace rest
 
                     con.Open();
 
-                //  cmd.Parameters.Add("mId", SqlDbType.Int).Value = mId;
 
                 dr = cmd.ExecuteReader();
                 int sayac = 0;
@@ -268,22 +259,12 @@ namespace rest
                     lv.Items[sayac].SubItems.Add(dr["SERVİSTURU"].ToString());
                     lv.Items[sayac].SubItems.Add(getDurum(Convert.ToInt32(dr["DURUM"])));
 
-                    // lv.Items[sayac].SubItems.Add(dr["DURUM"].ToString() == "1" ? "Boş" : dr["DURUM"].ToString() == "2" ? "Dolu": dr["DURUM"].ToString() == "3" ? "Rezerve" : "Açık Rezerve") ;
                     lv.Items[sayac].SubItems.Add(dr["ONAY"].ToString());
-                    //lv.Items[sayac].SubItems.Add(dr["TARIH"].ToString());
-                    //lv.Items[sayac].SubItems.Add(dr["ACIKLAMA"].ToString());
-                    //lv.Items[sayac].SubItems.Add(Convert.ToBoolean(dr["DURUM"]) ? "Kapandı" : "Açık");
+        
 
                     sayac++;
                 }
-                //foreach (ListViewItem item in lv.Items)
-                //{
-                //    if (item.SubItems["DURUM"].Text == "true")
-                //    {
-                //        item.SubItems[codeIdx].Text = "new value...";
-                //        break;
-                //    }
-                //}
+        
             }
 
             catch (SqlException ex)

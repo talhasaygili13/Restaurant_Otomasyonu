@@ -157,7 +157,6 @@ namespace rest
                     "Select rezarvasyonlar.MUSTERIID,(AD + SOYAD) as musteri from rezarvasyonlar Inner Join musteriler On rezarvasyonlar.MUSTERIID=musteriler.ID where rezarvasyonlar.DURUM = 0",
                     conn);
 
-            /* cmmd.Parameters.Add("@ID", SqlDbType.Int).Value = txt;*/
 
             if (conn.State == ConnectionState.Closed)
             {
@@ -248,7 +247,6 @@ namespace rest
             SqlConnection con = new SqlConnection(gnl.conString);
             SqlCommand cmd = new SqlCommand("Select count(*) from rezarvasyonlar where rezarvasyonlar.DURUM = 0", con);
 
-            /* cmmd.Parameters.Add("@ID", SqlDbType.Int).Value = txt;*/
 
             if (con.State == ConnectionState.Closed)
             {
@@ -357,7 +355,6 @@ namespace rest
                     "Select rezarvasyonlar.MASAID from rezarvasyonlar INNER JOIN adisyon on rezarvasyonlar.ADISYONID=adisyon.ID where (rezarvasyonlar.DURUM = 1) and adisyon.DURUM=0 and rezarvasyonlar.MUSTERIID=@musteriId",
                     con);
 
-            /* cmmd.Parameters.Add("@ID", SqlDbType.Int).Value = txt;*/
 
             if (con.State == ConnectionState.Closed)
             {
@@ -414,14 +411,7 @@ namespace rest
 
                     sayac++;
                 }
-                //foreach (ListViewItem item in lv.Items)
-                //{
-                //    if (item.SubItems["DURUM"].Text == "true")
-                //    {
-                //        item.SubItems[codeIdx].Text = "new value...";
-                //        break;
-                //    }
-                //}
+    
             }
 
             catch (SqlException ex)
@@ -469,14 +459,7 @@ namespace rest
 
                     sayac++;
                 }
-                //foreach (ListViewItem item in lv.Items)
-                //{
-                //    if (item.SubItems["DURUM"].Text == "true")
-                //    {
-                //        item.SubItems[codeIdx].Text = "new value...";
-                //        break;
-                //    }
-                //}
+      
             }
 
             catch (SqlException ex)
@@ -507,7 +490,6 @@ namespace rest
 
                     con.Open();
 
-                //  cmd.Parameters.Add("mId", SqlDbType.Int).Value = mId;
 
                 dr = cmd.ExecuteReader();
                 int sayac = 0;
@@ -524,14 +506,7 @@ namespace rest
 
                     sayac++;
                 }
-                //foreach (ListViewItem item in lv.Items)
-                //{
-                //    if (item.SubItems["DURUM"].Text == "true")
-                //    {
-                //        item.SubItems[codeIdx].Text = "new value...";
-                //        break;
-                //    }
-                //}
+      
             }
 
             catch (SqlException ex)
@@ -564,7 +539,6 @@ namespace rest
 
                     con.Open();
 
-                //  cmd.Parameters.Add("mId", SqlDbType.Int).Value = mId;
 
                 dr = cmd.ExecuteReader();
                 int sayac = 0;
@@ -581,7 +555,6 @@ namespace rest
 
                     sayac++;
                 }
-                //  cmd.Parameters.Add("@katId", SqlDbType.Int).Value = urunKatId;
             }
             catch (SqlException ex)
             {
@@ -611,7 +584,6 @@ namespace rest
 
                     con.Open();
 
-                //  cmd.Parameters.Add("mId", SqlDbType.Int).Value = mId;
 
                 dr = cmd.ExecuteReader();
                 int sayac = 0;
@@ -628,14 +600,7 @@ namespace rest
 
                     sayac++;
                 }
-                //foreach (ListViewItem item in lv.Items)
-                //{
-                //    if (item.SubItems["DURUM"].Text == "true")
-                //    {
-                //        item.SubItems[codeIdx].Text = "new value...";
-                //        break;
-                //    }
-                //}
+        
             }
 
             catch (SqlException ex)

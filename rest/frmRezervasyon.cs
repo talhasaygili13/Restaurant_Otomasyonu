@@ -6,13 +6,7 @@ namespace rest
 {
     public partial class frmRezervasyon : Form
     {
-      //  private readonly cMusteriler clients;
-       // private readonly cMasalar table;
-       // private readonly frmMenu menu;
-       // private readonly cRezervasyon reservations;
-       // private readonly frmSiparisKontrol orderControl;
-       // private readonly musteriEkleme addClient;
-
+   
         public frmRezervasyon()
         {
             InitializeComponent();
@@ -146,12 +140,10 @@ namespace rest
         {
             dtTarih.Height = 200;
             dtTarih.Text = dtTarih.Value.ToString();
-            // txtTarih.Text = dtTarih.Value.ToString();
         }
 
         private void cbMasa_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //cbMasa.Width = 17;
             cbKisiSayisi.Enabled = true;
             cbMasa.Text = cbMasa.SelectedItem.ToString();
 
@@ -174,7 +166,9 @@ namespace rest
 
         private void btnSiparisKontrol_Click(object sender, EventArgs e)
         {
+
             frmSiparisKontrol orderControl = new frmSiparisKontrol();
+            orderControl.paketSiparis = false;
 
             this.Close();
             orderControl.Show();
@@ -182,18 +176,22 @@ namespace rest
 
         private void btnYeniMusteri_Click(object sender, EventArgs e)
         {
-            musteriEkleme addClient = new musteriEkleme();
+         
 
-            cGenel._musteriEkleme = 0;
-            addClient.musteriGuncelle.Visible = false;
-            addClient.btnEkle.Visible = true;
+            musteriEkleme addClients = new musteriEkleme();
+
+            addClients.eklemeEkrani = true;
+            cGenel._musteriEkleme = 1;
+            addClients.rezervasyon = true;
+         
             this.Close();
-            addClient.Show();
+            addClients.Show();
         }
 
         private void guncelleMusteri_Click(object sender, EventArgs e)
         {
             musteriEkleme addClient = new musteriEkleme();
+            addClient.rezervasyon = true;
 
             if (lvMusteriler.SelectedItems.Count > 0)
             {

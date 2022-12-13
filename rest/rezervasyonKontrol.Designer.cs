@@ -76,27 +76,27 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "ID";
+            this.columnHeader1.Text = "No";
             this.columnHeader1.Width = 49;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "MUSTERIID";
+            this.columnHeader2.Text = "Müşteri No";
             this.columnHeader2.Width = 108;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "ADISYONID";
+            this.columnHeader3.Text = "Adisyon No";
             this.columnHeader3.Width = 102;
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "MASAID";
+            this.columnHeader4.Text = "Masa No";
             this.columnHeader4.Width = 83;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "KISISAYISI";
+            this.columnHeader5.Text = "Kişi Sayısı";
             this.columnHeader5.Width = 97;
             // 
             // columnHeader6

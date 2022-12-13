@@ -358,7 +358,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Ürün Adı";
-            this.columnHeader1.Width = 128;
+            this.columnHeader1.Width = 150;
             // 
             // columnHeader2
             // 
@@ -367,7 +367,7 @@
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "UrunId";
+            this.columnHeader3.Text = "Ürün No";
             this.columnHeader3.Width = 124;
             // 
             // columnHeader4
@@ -378,7 +378,7 @@
             // columnHeader5
             // 
             this.columnHeader5.Text = "SatisId";
-            this.columnHeader5.Width = 137;
+            this.columnHeader5.Width = 0;
             // 
             // hesapKapat
             // 

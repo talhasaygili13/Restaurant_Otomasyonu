@@ -13,11 +13,6 @@ namespace rest
 {
     public partial class rezervasyonKontrol : Form
     {
-        // private readonly cRezervasyon reservation;
-        //  private readonly cMasalar table;
-        //private readonly cAdisyon addition;
-        //private readonly frmMenu menu;
-
         public rezervasyonKontrol()
         {
             InitializeComponent();
@@ -29,8 +24,6 @@ namespace rest
         private void rezervasyonKontrol_Load(object sender, EventArgs e)
         {
             cRezervasyon reservation = new cRezervasyon();
-
-            //     DateTime rezarvasyonTime = Convert.ToDateTime(lvRezervasyonKontrol.SelectedItems[0].SubItems[5].Text);
             reservation.rezervasyonKontrol(lvRezervasyonKontrol);
         }
 
@@ -51,7 +44,6 @@ namespace rest
                 yenile();
             }
 
-          //  rezervasyonSilGeçmiş();
         }
 
         public void rezervasyonSilGeçmiş()
@@ -169,17 +161,14 @@ namespace rest
 
             if (Convert.ToDateTime(value) > today)
             {
-                //MessageBox.Show("Gelecek Rezervasyon");
                 kontrolEtYenile();
             }
             else if (Convert.ToDateTime(value) == today)
             {
-                // MessageBox.Show("Rezervasyon Bugün");
                 kontrolEtYenile();
             }
             else if (Convert.ToDateTime(value) < today)
             {
-                // MessageBox.Show("Geçmiş Rezervasyon");
                 kontrolEtYenile();
             }
         }

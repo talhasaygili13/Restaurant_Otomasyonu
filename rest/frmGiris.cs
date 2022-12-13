@@ -13,10 +13,7 @@ namespace rest
 {
     public partial class frmGiris : Form
     {
-        // private readonly cPersoneller worker;
-        //private readonly cPersonelHareketleri worekrControl;
-        // private readonly frmMenu menu;
-
+       
         public frmGiris()
         {
             InitializeComponent();
@@ -60,13 +57,11 @@ namespace rest
             {
                 txtSifre.UseSystemPasswordChar = false;
                 checkBox1.BackgroundImage = Properties.Resources.eye;
-                // checkBox1.BackColor = Color.Transparent;
             }
             else if (checkBox1.Checked == false)
             {
                 txtSifre.UseSystemPasswordChar = true;
                 checkBox1.BackgroundImage = Properties.Resources.openEye;
-                // checkBox1.BackColor = Color.Transparent;
             }
         }
 

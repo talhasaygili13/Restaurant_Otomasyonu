@@ -62,7 +62,6 @@ namespace rest
         //urun adına göre listele
         public void urunleriListeleByUrunAdi(ListView lv, string urunAdi)
         {
-            //  Select* from urunler where DURUM = 0 and URUNAD like '&' + @urunAdi + '%'
             lv.Items.Clear();
             SqlConnection con = new SqlConnection(gnl.conString);
             SqlCommand cmd =
@@ -85,7 +84,7 @@ namespace rest
                     lv.Items[sayac].SubItems.Add(dr["KATEGORIID"].ToString());
                     lv.Items[sayac].SubItems.Add(dr["URUNAD"].ToString());
                     lv.Items[sayac].SubItems.Add(dr["ACIKLAMA"].ToString());
-                    lv.Items[sayac].SubItems.Add(string.Format("{0:0#00.0}", dr["UCRET"].ToString()));
+                    lv.Items[sayac].SubItems.Add(string.Format("{0:0#00.0}", dr["UCRET"].ToString().Split(',')[0].Trim()));
                     sayac++;
                 }
             }
@@ -163,7 +162,7 @@ namespace rest
                     lv.Items[sayac].SubItems.Add(dr["KATEGORIID"].ToString());
                     lv.Items[sayac].SubItems.Add(dr["KATEGORIADI"].ToString());
                     lv.Items[sayac].SubItems.Add(dr["URUNAD"].ToString());
-                    lv.Items[sayac].SubItems.Add(string.Format("{0:0#00.0}", dr["UCRET"].ToString()));
+                    lv.Items[sayac].SubItems.Add(string.Format("{0:0#00.0}", dr["UCRET"].ToString().Split(',')[0].Trim()));
                     sayac++;
                 }
             }
@@ -284,7 +283,7 @@ namespace rest
                     lv.Items[sayac].SubItems.Add(dr["KATEGORIID"].ToString());
                     lv.Items[sayac].SubItems.Add(dr["KATEGORIADI"].ToString());
                     lv.Items[sayac].SubItems.Add(dr["URUNAD"].ToString());
-                    lv.Items[sayac].SubItems.Add(string.Format("{0:0#00.0}", dr["UCRET"].ToString()));
+                    lv.Items[sayac].SubItems.Add(string.Format("{0:0#00.0}", dr["UCRET"].ToString().Split(',')[0].Trim()));
                     sayac++;
                 }
             }
@@ -309,7 +308,6 @@ namespace rest
             SqlCommand cmd = new SqlCommand(
                 "Select top 10 urunler.URUNAD , sum(satislar.ADET) as adeti FROM kategoriler Inner Join urunler on kategoriler.ID = urunler.KATEGORIID Inner Join satislar on urunler.ID=satislar.URUNID Inner Join adisyon on satislar.ADISYONID =adisyon.ID where (CONVERT(datetime,TARIH,104) between convert(datetime,@Baslangic,104) and convert(datetime,@Bitis,104)) group by urunler.URUNAD order by adeti desc",
                 con);
-            //SqlCommand cmd = new SqlCommand("Select top 10 urunler.URUNAD, sum(satislar.ADET) as adeti FROM kategoriler Inner Join urunler on kategoriler.ID = urunler.KATEGORIID Inner Join satislar on urunler.ID = satislar.URUNID Inner Join adisyon on satislar.ADISYONID = adisyon.ID where adisyon.TARIH between '@Baslangic' AND '@Bitis' group by urunler.URUNAD order by adeti desc");
             SqlDataReader dr = null;
 
             cmd.Parameters.Add("@Baslangic", SqlDbType.VarChar).Value = Baslangic.Value.ToShortDateString();

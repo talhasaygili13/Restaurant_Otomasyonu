@@ -63,16 +63,16 @@ namespace rest
                 conn.Open();
             }
 
+            char ayrac = ',';
             SqlDataReader dr = cmmd.ExecuteReader();
             int i = 0;
             while (dr.Read())
             {
                 Cesitler.Items.Add(dr["URUNAD"].ToString());
-                Cesitler.Items[i].SubItems.Add(dr["UCRET"].ToString());
+                Cesitler.Items[i].SubItems.Add(dr["UCRET"].ToString().Split(',')[0].Trim());
                 Cesitler.Items[i].SubItems.Add(dr["ID"].ToString());
                 i++;
             }
-
             dr.Close();
             conn.Dispose();
             conn.Close();
@@ -96,7 +96,7 @@ namespace rest
             while (dr.Read())
             {
                 Cesitler.Items.Add(dr["URUNAD"].ToString());
-                Cesitler.Items[i].SubItems.Add(dr["UCRET"].ToString());
+                Cesitler.Items[i].SubItems.Add(dr["UCRET"].ToString().Split(',')[0].Trim());
                 Cesitler.Items[i].SubItems.Add(dr["ID"].ToString());
                 i++;
             }
@@ -299,12 +299,8 @@ namespace rest
             int sonuc = 0;
 
             SqlConnection con = new SqlConnection(gnl.conString);
-            //  SqlCommand cmd = new SqlCommand("Update kategoriler set DURUM=1  where ID=@KATID", con); 
             SqlCommand cmd = new SqlCommand("Update kategoriler set DURUM = 1 from kategoriler where ID = @KATID ",
                 con);
-
-            //SqlCommand cmmd = new SqlCommand("update urunler SET DURUM = kategoriler.DURUM from urunler INNER JOIN kategoriler ON	 kategoriler.ID = urunler.KATEGORIID where kategoriler.DURUM = 1 and kategoriler.ID = @KATID", con);
-
             try
             {
                 if (con.State == ConnectionState.Closed)

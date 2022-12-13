@@ -12,15 +12,9 @@ namespace rest
 {
     public partial class frmMutfak : Form
     {
-      //  private readonly cUrunCesitleri productTypes;
-       // private readonly cUrunler products;
-        private readonly frmMenu menu;
-
         public frmMutfak()
         {
             InitializeComponent();
-
-             menu = new frmMenu();
         }
 
 
@@ -56,53 +50,6 @@ namespace rest
             cUrunCesitleri productTypes = new cUrunCesitleri();
             cUrunler products = new cUrunler();
 
-            //if (rbAnaKategori.Checked)
-            //{
-            //    if (txtKategoriAd.Text.Trim() == "" || txtAciklama.Text.Trim() == "")
-            //    {
-            //        MessageBox.
-            // ("Gıda Adı,Fiyatı ve Kategori seçilmedi.", "Dikkat, Bilgiler Eksik", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    }
-            //    else
-            //    {
-            //        cUrunler c = new cUrunler();
-            //       // c.Fiyat = Convert.ToDecimal(txtGidaFiyati.Text);
-            //        c.Urunad = txtGidaAdi.Text;
-            //        c.Aciklama = "Ürün Eklendi";
-            //        c.Urunturno = urunTurNo;
-            //        int sonuc = c.urunEkle(c);
-
-            //        if (sonuc != 0)
-            //        {
-            //            MessageBox.Show("Ürün Eklenmiştir");
-            //            cbKategoriler_SelectedIndexChanged(sender, e);
-            //            yenile();
-            //            Temizle();
-            //        }
-            //    }
-            //}
-            //else
-            //{
-            //    if (txtKategoriAd.Text.Trim() == "")
-            //    {
-            //        MessageBox.Show("Lütfen bir kategori ismi giriniz.", "Dikkat, Bilgiler Eksik", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-            //    }
-            //    else
-            //    {
-            //        cUrunCesitleri gida = new cUrunCesitleri();
-            //        gida.KategoriAd = txtKategoriAd.Text;
-            //        gida.Aciklama = txtAciklama.Text;
-            //        int sonuc = gida.urunKategoriEkle(gida);
-            //        if (sonuc != 0)
-            //        {
-            //            MessageBox.Show("Kategori Eklenmiştir");
-            //            gida.urunCesitleriniGetir(cbKategoriler);
-            //            gida.urunCesitleriniGetir(lvKategoriler);
-            //            Temizle();
-            //        }
-            //    }
-            //}
 
 
             if (rbAltKategori.Checked)
@@ -238,7 +185,6 @@ namespace rest
                 txtGidaAdi.Text = lvGidaListesi.SelectedItems[0].SubItems[3].Text;
                 txtGidaFiyati.Text = lvGidaListesi.SelectedItems[0].SubItems[4].Text;
                 txtUrunId.Text = lvGidaListesi.SelectedItems[0].SubItems[0].Text;
-                //cbKategoriler.SelectedIndex=Convert.ToInt32(txtUrunId.Text);
             }
         }
 
@@ -249,7 +195,6 @@ namespace rest
                 txtKategoriAd.Text = lvKategoriler.SelectedItems[0].SubItems[1].Text;
                 txtKategoriId.Text = lvKategoriler.SelectedItems[0].SubItems[0].Text;
                 txtAciklama.Text = lvKategoriler.SelectedItems[0].SubItems[2].Text;
-                //cbKategoriler.SelectedIndex=Convert.ToInt32(txtUrunId.Text);
             }
         }
 
@@ -273,7 +218,6 @@ namespace rest
                         if (sonuc != 0)
                         {
                             MessageBox.Show("Ürün Silinmiştir");
-                            //cbKategoriler_SelectedIndexChanged(sender, e);
 
                             yenile();
                             Temizle();
@@ -307,9 +251,7 @@ namespace rest
                         if (sonuc != 0)
                         {
                             MessageBox.Show("Kategori Silinmiştir");
-                            //cUrunler c = new cUrunler();
-                            //c.Urunid = Convert.ToInt32(txtKategoriId.Text);
-                            //c.urunSil(c,0);
+
                             productTypes.urunSilKategoriDurum(Convert.ToInt32(txtKategoriId.Text));
                             yenile();
                             Temizle();
@@ -326,6 +268,8 @@ namespace rest
 
         private void btnGeriDon_Click(object sender, EventArgs e)
         {
+            frmMenu menu = new frmMenu();
+
             this.Close();
             menu.Show();
         }
@@ -362,10 +306,7 @@ namespace rest
 
         private void rbAnaKategori_CheckedChanged(object sender, EventArgs e)
         {
-            //panelUrun.Visible = false;
-            //panelAnaKategori.Visible = true;
-            //lvKategoriler.Visible = true;
-            //lvGidaListesi.Visible = false;
+     
             panelUrun.Visible = false;
             panelAnaKategori.Visible = true;
             lvKategoriler.Visible = true;
@@ -378,13 +319,7 @@ namespace rest
             cUrunCesitleri productTypes = new cUrunCesitleri();
             cUrunler products = new cUrunler();
 
-            //cUrunCesitleri uc = new cUrunCesitleri();
-            //uc.urunCesitleriniGetir(cbKategoriler);
-            //cbKategoriler.Items.Insert(0, "Tüm Kategoriler");
-            //cbKategoriler.SelectedIndex= 0;
-            //uc.urunCesitleriniGetir(lvKategoriler);
-            //cUrunler c = new cUrunler();
-            //c.urunleriListele(lvGidaListesi);
+
 
             productTypes.urunCesitleriniGetir(cbKategoriler);
             productTypes.urunCesitleriniGetir(lvKategoriler);

@@ -8,5 +8,10 @@ namespace rest
         {
             InitializeComponent();
         }
+
+        private void frmPaketSiparis_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

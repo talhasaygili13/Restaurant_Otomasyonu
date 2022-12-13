@@ -15,8 +15,7 @@ namespace rest
 
     public partial class frmRaporlar : Form
     {
-        //private readonly cUrunler products;
-        //private readonly frmMenu menu;
+
 
         public frmRaporlar()
         {
@@ -173,6 +172,10 @@ namespace rest
             toolTip1.Show("İstatistikleri Görüntüle", btnZraporu);
         }
 
-    
+        private void frmRaporlar_Load(object sender, EventArgs e)
+        {
+
+            dtBaslangic.Value = DateTime.Now.AddMonths(-1); 
+        }
     }
 }

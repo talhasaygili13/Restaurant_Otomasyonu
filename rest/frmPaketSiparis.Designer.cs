@@ -38,6 +38,7 @@
             this.Name = "frmPaketSiparis";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmPaketSiparis";
+            this.Load += new System.EventHandler(this.frmPaketSiparis_Load);
             this.ResumeLayout(false);
 
         }

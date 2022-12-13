@@ -13,12 +13,7 @@ namespace rest
 {
     public partial class musteriEkleme : Form
     {
-        //private readonly cMusteriler clients;
-        //private readonly frmRezervasyon reservations;
-        //private readonly frmPaketSiparis packets;
-        //private readonly frmMusteriAra searchClients;
-        //private readonly frmMenu menu;
-
+ 
         public musteriEkleme()
         {
             InitializeComponent();
@@ -28,7 +23,6 @@ namespace rest
         private void btnEkle_Click(object sender, EventArgs e)
         {
             cMusteriler clients = new cMusteriler();
-
             if (txtTelefon.Text.Length > 6)
             {
                 if (txtMusteriAd.Text == "" || txtMusteriSoyad.Text == "")
@@ -37,7 +31,7 @@ namespace rest
                 }
                 else
                 {
-                    bool sonuc = clients.MusteriKontrol(txtTelefon.Text);
+                    bool sonuc = clients.MusteriKontrol(txtTelefon.Text,txtMusteriAd.Text,txtMusteriSoyad.Text);
                     if (!sonuc)
                     {
                         clients.Musteriad = txtMusteriAd.Text;
@@ -148,7 +142,17 @@ namespace rest
         private void musteriEkleme_Load(object sender, EventArgs e)
         {
             cMusteriler clients = new cMusteriler();
-
+        
+            if (rezervasyon == true)
+            {
+                btnKapat.Visible = true;
+                btnGeriDon.Visible = false;
+            }
+            else
+            {
+                btnKapat.Visible = false;
+                btnGeriDon.Visible = true;
+            }
             if (eklemeEkrani)
             {
                 btnEkle.Visible = true;
@@ -169,22 +173,19 @@ namespace rest
 
         private void btnGeriDon_Click(object sender, EventArgs e)
         {
-            frmMenu menu = new frmMenu();
 
-            frmMusteriAra searchClients = new frmMusteriAra();
-
+          frmMusteriAra searchClient = new frmMusteriAra(); 
             cGenel._musteriEkleme = 1;
             this.Close();
-            menu.Show();
+            searchClient.Show();
         }
 
         private void btnKapat_Click(object sender, EventArgs e)
         {
-            frmMusteriAra searchClients = new frmMusteriAra();
-
+            frmRezervasyon reservation = new frmRezervasyon();
             this.Close();
 
-            searchClients.Show();
+            reservation.Show();
         }
 
 
@@ -194,13 +195,11 @@ namespace rest
             {
                 txtMusteriAd.Text = "";
                 txtMusteriAd.Text = string.Empty;
-                //txtPassword.Text = string.Empty;
                 txtMusteriSoyad.Text = string.Empty;
                 txtTelefon.Text = string.Empty;
                 txtEmail.Text = string.Empty;
                 txtMusteriNo.Text = string.Empty;
                 txtAdres.Text = string.Empty;
-                //fnMessage(false, "");
             }
             catch (Exception ex)
             {
@@ -213,6 +212,7 @@ namespace rest
 
         public bool eklemeEkrani = false;
 
+        public bool rezervasyon = false;
 
         private void musteriGuncelle_MouseHover(object sender, EventArgs e)
         {
@@ -222,6 +222,18 @@ namespace rest
         private void btnEkle_MouseHover(object sender, EventArgs e)
         {
             toolTip1.Show("Müşteri eklemek için tıklayınız.", btnEkle);
+        }
+
+        private void btnKapat_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Rezervasyonlar sayfasına dönmek için tıklayınız.", btnKapat);
+
+        }
+
+        private void btnGeriDon_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Müsteriler sayfasına dönmek için tıklayınız.", btnGeriDon);
+
         }
     }
 }

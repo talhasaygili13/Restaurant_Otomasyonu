@@ -81,7 +81,7 @@ namespace rest
                     lv.Items[sayac].SubItems.Add(dr["ADET"].ToString());
                     lv.Items[sayac].SubItems.Add(dr["URUNID"].ToString());
                     lv.Items[sayac].SubItems
-                        .Add(Convert.ToString(Convert.ToDecimal(dr["UCRET"]) * Convert.ToDecimal(dr["ADET"])));
+                        .Add(Convert.ToString(Convert.ToDecimal(dr["UCRET"].ToString().Split(',')[0].Trim()) * Convert.ToDecimal(dr["ADET"])));
                     lv.Items[sayac].SubItems.Add(dr["ID"].ToString());
                     sayac++;
                 }
@@ -158,7 +158,6 @@ namespace rest
             SqlCommand cmd = new SqlCommand(
                 " select sum(dbo.satislar.ADET * dbo.urunler.UCRET) as ucret from dbo.musteriler inner join dbo.paketSiparis on dbo.musteriler.ID=paketSiparis.MUSTERIID inner join adisyon on adisyon.ID=paketSiparis.ADISYONID inner join satislar on dbo.satislar.ADISYONID =adisyon.ID inner join dbo.urunler on dbo.satislar.URUNID=dbo.urunler.ID where (dbo.paketSiparis.MUSTERIID = @musteriId) and (dbo.paketSiparis.DURUM =0)",
                 con);
-            /* SqlCommand cmd = new SqlCommand("Select sum(TOPLAMTUTAR) from hesapOdemeleri where MUSTERIID=@musteriID",con);*/
             cmd.Parameters.Add("musteriId", SqlDbType.Int).Value = musteriId;
             try
             {
@@ -208,7 +207,7 @@ namespace rest
                     lv.Items.Add(dr["satisId"].ToString());
                     lv.Items[i].SubItems.Add(dr["URUNAD"].ToString());
                     lv.Items[i].SubItems.Add(dr["ADET"].ToString());
-                    lv.Items[i].SubItems.Add(dr["UCRET"].ToString());
+                    lv.Items[i].SubItems.Add(dr["UCRET"].ToString().Split(',')[0].Trim());
                     i++;
                 }
             }

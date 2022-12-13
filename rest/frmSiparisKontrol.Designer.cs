@@ -52,6 +52,7 @@
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnGeriDon = new System.Windows.Forms.Button();
+            this.btnRezervasyonDon = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lvSatisDetaylari
@@ -269,6 +270,17 @@
             this.btnGeriDon.UseVisualStyleBackColor = true;
             this.btnGeriDon.Click += new System.EventHandler(this.btnGeriDon_Click);
             // 
+            // btnRezervasyonDon
+            // 
+            this.btnRezervasyonDon.BackgroundImage = global::rest.Properties.Resources.goBack;
+            this.btnRezervasyonDon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRezervasyonDon.Location = new System.Drawing.Point(133, 723);
+            this.btnRezervasyonDon.Name = "btnRezervasyonDon";
+            this.btnRezervasyonDon.Size = new System.Drawing.Size(71, 68);
+            this.btnRezervasyonDon.TabIndex = 18;
+            this.btnRezervasyonDon.UseVisualStyleBackColor = true;
+            this.btnRezervasyonDon.Click += new System.EventHandler(this.btnRezervasyonDon_Click);
+            // 
             // frmSiparisKontrol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,6 +288,7 @@
             this.BackgroundImage = global::rest.Properties.Resources.arkaplan;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1247, 832);
+            this.Controls.Add(this.btnRezervasyonDon);
             this.Controls.Add(this.btnGeriDon);
             this.Controls.Add(this.lvMusteriler);
             this.Controls.Add(this.lblSonSiparisTarihi);
@@ -323,5 +336,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.Button btnGeriDon;
+        private System.Windows.Forms.Button btnRezervasyonDon;
     }
 }

@@ -463,7 +463,6 @@
             this.btn2.TabIndex = 19;
             this.btn2.Text = "2";
             this.btn2.UseVisualStyleBackColor = false;
-            this.btn2.Click += new System.EventHandler(this.button8_Click);
             // 
             // btn1
             // 
@@ -567,12 +566,12 @@
             // 
             // columnHeader10
             // 
-            this.columnHeader10.Text = "AdisyonId";
+            this.columnHeader10.Text = "Adisyon No";
             this.columnHeader10.Width = 100;
             // 
             // columnHeader11
             // 
-            this.columnHeader11.Text = "UrunId";
+            this.columnHeader11.Text = "Ürün No";
             this.columnHeader11.Width = 70;
             // 
             // columnHeader12
@@ -582,13 +581,13 @@
             // 
             // columnHeader13
             // 
-            this.columnHeader13.Text = "MasaId";
-            this.columnHeader13.Width = 70;
+            this.columnHeader13.Text = "Masa No";
+            this.columnHeader13.Width = 0;
             // 
             // columnHeader14
             // 
-            this.columnHeader14.Text = "SilinenId";
-            this.columnHeader14.Width = 80;
+            this.columnHeader14.Text = "Silinen No";
+            this.columnHeader14.Width = 100;
             // 
             // lvAdisyon
             // 
@@ -620,28 +619,28 @@
             // 
             // columnHeader16
             // 
-            this.columnHeader16.Text = "MUSTERIID";
+            this.columnHeader16.Text = "Müşteri No";
             this.columnHeader16.Width = 83;
             // 
             // columnHeader17
             // 
-            this.columnHeader17.Text = "ADISYONID";
+            this.columnHeader17.Text = "Adisyon No";
             this.columnHeader17.Width = 83;
             // 
             // columnHeader18
             // 
-            this.columnHeader18.Text = "MASAID";
-            this.columnHeader18.Width = 64;
+            this.columnHeader18.Text = "Masa No";
+            this.columnHeader18.Width = 0;
             // 
             // columnHeader19
             // 
-            this.columnHeader19.Text = "KISISAYISI";
+            this.columnHeader19.Text = "Kişi Sayısı";
             this.columnHeader19.Width = 93;
             // 
             // columnHeader20
             // 
             this.columnHeader20.Text = "TARIH";
-            this.columnHeader20.Width = 100;
+            this.columnHeader20.Width = 150;
             // 
             // columnHeader21
             // 
@@ -651,6 +650,7 @@
             // columnHeader22
             // 
             this.columnHeader22.Text = "DURUM";
+            this.columnHeader22.Width = 80;
             // 
             // groupBox4
             // 
